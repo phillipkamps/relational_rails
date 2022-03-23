@@ -1,0 +1,8 @@
+<h1>Teams</h1>
+<% @teams.each do |team| %>
+<h3><%= team.name %></h3>
+<p>Rank:<%= team.rank %></p>
+<p>Won Championship?:<%= team.won_championship %></p>
+<p>Created:<%= team.created_at %></p>
+<p>Updated:<%= team.updated_at %></p>
+<% end %>
