@@ -1,0 +1,9 @@
+<h1>Players</h1>
+<% @players.each do |player| %>
+<h3><%= player.name %></h3>
+<p><%= player.team_id %></p>
+<p><%= player.age %></p>
+<p><%= player.injured %></p>
+<p><%= player.created_at %></p>
+<p><%= player.updated_at %></p>
+<% end %>
