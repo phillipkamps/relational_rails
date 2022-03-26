@@ -3,5 +3,5 @@
 
 <h1>Teams</h1>
 <% @teams.each do |team| %>
-<h3><a href = "/teams/<%=team.id%>/players"><%= team.name %></a> <%= team.created_at %></h3>
+<h3><a href = "/teams/<%=team.id%>"><%= team.name %></a> <%= team.created_at %></h3>
 <% end %>

@@ -8,3 +8,5 @@
 <p><%= @team.created_at %></p>
 <p><%= @team.updated_at %></p>
 <p>Player Count: <%= @team.players.count %></p>
+
+<h3><a href = "/teams/<%= @team.id %>/players"><%= @team.name %> Players</a></h3>
