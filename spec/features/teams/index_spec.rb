@@ -22,5 +22,15 @@ RSpec.describe "Teams Index", type: :feature do
       expect("City").to appear_before("United")
       expect("Chelsea").to appear_before("City")
     end
+
+    it "has link to teams index" do
+      visit "/teams"
+      expect(page).to have_link("Teams Index")
+    end
+
+    it "has link to players index" do
+      visit "/teams"
+      expect(page).to have_link("Players Index")
+    end
   end
 end

@@ -1,5 +1,10 @@
+<h3><a href = "/players">Players Index</a></h3>
+<h3><a href = "/teams">Teams Index</a></h3>
+
+
 <h1><%= @team.name %></h1>
 <p><%= @team.rank %></p>
 <p><%= @team.won_championship %></p>
 <p><%= @team.created_at %></p>
 <p><%= @team.updated_at %></p>
+<p>Player Count: <%= @team.players.count %></p>

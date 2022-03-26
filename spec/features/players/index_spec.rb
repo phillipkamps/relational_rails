@@ -16,5 +16,15 @@ RSpec.describe "Players Index", type: :feature do
       expect(page).to have_content("28")
       expect(page).to have_content("true")
     end
+
+    it "has link to teams index" do
+      visit "/players"
+      expect(page).to have_link("Teams Index")
+    end
+
+    it "has link to players index" do
+      visit "/players"
+      expect(page).to have_link("Players Index")
+    end
   end
 end
