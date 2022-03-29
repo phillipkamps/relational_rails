@@ -3,7 +3,11 @@
 
 <h1>Teams</h1>
 <% @teams.each do |team| %>
-<h4><a href = "/teams/<%=team.id%>"><%= team.name %></a> <%= team.created_at %></h4>
+<h4>
+  <a href = "/teams/<%=team.id%>"><%= team.name %></a>
+  <%= team.created_at %>
+  <a href = "/teams/<%=team.id%>/edit">Update <%= team.name %></a>
+</h4>
 <% end %>
 
 <h3><a href = "/teams/new">New Team</a></h3>

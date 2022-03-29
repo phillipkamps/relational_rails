@@ -1,11 +1,9 @@
 require "rails_helper"
 
 RSpec.describe "Teams Index", type: :feature do
-  before :each do
-    @team_united = Team.create!(name: "United", rank: 5, won_championship: true)
-    @team_chelsea = Team.create!(name: "Chelsea", rank: 3, won_championship: true)
-    @team_liverpool = Team.create!(name: "Liverpool", rank: 2, won_championship: true)
-  end
+  let!(:team_united) { Team.create!(name: "United", rank: 5, won_championship: true) }
+  let!(:team_chelsea) { Team.create!(name: "Chelsea", rank: 3, won_championship: true) }
+  let!(:team_liverpool) { Team.create!(name: "Liverpool", rank: 2, won_championship: true) }
 
   describe "#index" do
     it "returns list of all team records" do
@@ -34,6 +32,13 @@ RSpec.describe "Teams Index", type: :feature do
     it "has link to create new team" do
       visit "/teams"
       expect(page).to have_link("New Team")
+    end
+
+    it "has link to update each team" do
+      visit "/teams"
+      expect(page).to have_link("Update #{team_united.name}", href: "/teams/#{team_united.id}/edit")
+      expect(page).to have_link("Update #{team_chelsea.name}", href: "/teams/#{team_chelsea.id}/edit")
+      expect(page).to have_link("Update #{team_liverpool.name}", href: "/teams/#{team_liverpool.id}/edit")
     end
   end
 end
