@@ -55,7 +55,7 @@ RSpec.describe "Teams Show", type: :feature do
 
     it "has link to update team" do
       visit "/teams/#{@team_united.id}"
-      expect(page).to have_link("Update Team")
+      expect(page).to have_link("Update #{@team_united.name}")
     end
   end
 end
