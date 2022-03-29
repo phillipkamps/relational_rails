@@ -14,7 +14,7 @@ RSpec.describe "Teams Players Index", type: :feature do
     @player_virgil = Player.create!(name: "Virgil", age: 31, injured: false, team_id: @team_liverpool.id)
   end
 
-  it "returns list of all player records under same team id" do
+  it "returns list of all player records under same team id with true boolean values" do
     visit "/teams/#{@team_united.id}/players"
     expect(page).to have_content("Pogba")
     expect(page).to have_content("28")
