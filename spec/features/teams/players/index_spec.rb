@@ -33,4 +33,9 @@ RSpec.describe "Teams Players Index", type: :feature do
     visit "/teams/#{@team_united.id}/players"
     expect(page).to have_link("Players Index")
   end
+
+  it "has link to create player" do
+    visit "/teams/#{@team_united.id}/players"
+    expect(page).to have_link("Create Player")
+  end
 end

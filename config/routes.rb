@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get "/teams/:id", to: "teams#show"
 
   get "/players", to: "players#index"
+  get "/teams/:id/players/new", to: "teams_players#new"
+  post "/teams/:id/players", to: "teams_players#create"
   get "/players/:id", to: "players#show"
 end
