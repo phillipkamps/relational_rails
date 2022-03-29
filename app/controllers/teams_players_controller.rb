@@ -1,6 +1,7 @@
 class TeamsPlayersController < ApplicationController
   def index
     @team = Team.find(params[:id])
+    @players = @team.players.order(:name)
   end
 
   def new

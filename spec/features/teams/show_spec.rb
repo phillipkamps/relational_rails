@@ -38,11 +38,7 @@ RSpec.describe "Teams Show", type: :feature do
 
     it "has link to players index" do
       visit "/teams/#{@team_united.id}"
-      expect(page).to have_link("Players Index")
-      click_link("Players Index")
-      expect(page).to have_content("Pogba")
-      expect(page).to have_content("Pulisic")
-      expect(page).to have_content("Virgil")
+      expect(page).to have_link("Players Index", href: "/players")
     end
 
     it "has link to teams players index" do
