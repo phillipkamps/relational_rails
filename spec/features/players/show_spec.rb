@@ -35,7 +35,7 @@ RSpec.describe "Players Show", type: :feature do
 
     it "has link to update player" do
       visit "/players/#{@player_fernandes.id}"
-      expect(page).to have_link("Update Fernandes")
+      expect(page).to have_link("Update")
     end
   end
 end

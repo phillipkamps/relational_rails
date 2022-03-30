@@ -1,13 +1,16 @@
-<h3><a href = "/players">Players Index</a></h3>
-<h3><a href = "/teams">Teams Index</a></h3>
-
+<a href = "/players">Players Index</a>
+<br>
+<a href = "/teams">Teams Index</a>
+<h1 style="margin-bottom: 0px;"><%= @team.name %> Players</h1>
+<a href = "/teams/<%= @team.id %>/players/new">Create Player</a>
+<br>
+<br>
 <% @players.each do |player| %>
-<h4><%= player.name %> <a href="/teams/<%= player.id %>/edit">Update <%= player.name %></a></h4>
-<p><%= player.team_id %></p>
-<p><%= player.age %></p>
-<p><%= player.injured %></p>
-<p><%= player.created_at %></p>
-<p><%= player.updated_at %></p>
+  <h2 style="display:inline"><%= player.name %></h2>
+  <a href="/teams/<%= player.id %>/edit"> Update</a>
+  <p>Team ID: <%= player.team_id %></p>
+  <p>Age: <%= player.age %></p>
+  <p>Injured: <%= player.injured %></p>
+  <p>Created at: <%= player.created_at %></p>
+  <p>Updated at: <%= player.updated_at %></p>
 <% end %>
-
-<h3><a href = "/teams/<%= @team.id %>/players/new">Create Player</a></h3>

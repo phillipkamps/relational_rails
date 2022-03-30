@@ -1,9 +1,13 @@
 <%= form_with url: "/teams/#{@team.id}", method: :patch, local: true do |form| %>
+<h1 style="margin-bottom: 0px;">Update <%= @team.name %></h1>
   <%= form.label :name %>
   <%= form.text_field :name %>
+  <br>
   <%= form.label :rank %>
   <%= form.text_field :rank %>
+  <br>
   <%= form.label :won_championship %>
   <%= form.check_box :won_championship %>
+  <br>
   <%= form.submit "Submit" %>
 <% end %>

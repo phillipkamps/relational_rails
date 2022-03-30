@@ -38,8 +38,8 @@ RSpec.describe "Teams Players Index", type: :feature do
 
   it "has link to update each player" do
     visit "/teams/#{@team_united.id}/players"
-    expect(page).to have_link("Update #{@player_pogba.name}", href: "/teams/#{@player_pogba.id}/edit")
-    expect(page).to have_link("Update #{@player_fernandes.name}", href: "/teams/#{@player_fernandes.id}/edit")
-    expect(page).to have_link("Update #{@player_ronaldo.name}", href: "/teams/#{@player_ronaldo.id}/edit")
+    expect(page).to have_link("Update", href: "/teams/#{@player_pogba.id}/edit")
+    expect(page).to have_link("Update", href: "/teams/#{@player_fernandes.id}/edit")
+    expect(page).to have_link("Update", href: "/teams/#{@player_ronaldo.id}/edit")
   end
 end

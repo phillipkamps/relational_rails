@@ -1,14 +1,15 @@
-<h3><a href = "/players">Players Index</a></h3>
-<h3><a href = "/teams">Teams Index</a></h3>
+<a href = "/players">Players Index</a>
+<br>
+<a href = "/teams">Teams Index</a>
 
-
-<h1><%= @team.name %></h1>
-<p><%= @team.rank %></p>
-<p><%= @team.won_championship %></p>
-<p><%= @team.created_at %></p>
-<p><%= @team.updated_at %></p>
+<h1 style="margin-bottom: 0px;"><%= @team.name %></h1>
+<a href = "/teams/<%= @team.id %>/edit">Update</a>
+<p>Rank: <%= @team.rank %></p>
+<p>Won Championship: <%= @team.won_championship %></p>
+<p>Created at: <%= @team.created_at %></p>
+<p>Updated at: <%= @team.updated_at %></p>
 <p>Player Count: <%= @team.players.count %></p>
 
 <a href = "/teams/<%= @team.id %>/players"><%= @team.name %> Players</a>
-<a href = "/teams/<%= @team.id %>/edit">Update <%= @team.name %></a>
+<br>
 <%= button_to 'Delete', "/teams/#{@team.id}", method: :delete %>
