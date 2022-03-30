@@ -7,7 +7,7 @@
 <br>
 <% @players.each do |player| %>
   <h2 style="display:inline"><%= player.name %></h2>
-  <a href="/teams/<%= player.id %>/edit"> Update</a>
+  <a href="/players/<%= player.id %>/edit"> Update</a>
   <p>Team ID: <%= player.team_id %></p>
   <p>Age: <%= player.age %></p>
   <p>Injured: <%= player.injured %></p>
