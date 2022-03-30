@@ -7,11 +7,14 @@
 <br>
 <br>
 <% @teams.each do |team| %>
-<h2 style="display:inline">
-  <a href = "/teams/<%=team.id%>"><%= team.name %></a>
-</h2>
+<div data-id="<%= team.id %>">
+  <h2 style="display:inline">
+    <a href = "/teams/<%=team.id%>"><%= team.name %></a>
+  </h2>
   <a href = "/teams/<%=team.id%>/edit">Update</a>
   <%= team.created_at %>
+  <%= link_to 'Delete', "/teams/#{team.id}", method: :delete %>
   <br>
   <br>
+</div>
 <% end %>

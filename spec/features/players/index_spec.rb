@@ -31,5 +31,15 @@ RSpec.describe "Players Index", type: :feature do
       visit "/players"
       expect(page).to have_link("Update", href: "/players/#{player_pulisic.id}/edit")
     end
+
+    it "deletes a player" do
+      visit "/players"
+      expect(page).to have_link("Delete")
+      within "[data-id=#{player_pulisic.id}]" do
+        click_link "Delete"
+      end
+      expect(page).to have_no_content("Pulisic")
+      expect(current_path).to eq("/players")
+    end
   end
 end

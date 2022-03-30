@@ -36,9 +36,19 @@ RSpec.describe "Teams Index", type: :feature do
 
     it "has link to update each team" do
       visit "/teams"
-      expect(page).to have_link("Update #{team_united.name}", href: "/teams/#{team_united.id}/edit")
-      expect(page).to have_link("Update #{team_chelsea.name}", href: "/teams/#{team_chelsea.id}/edit")
-      expect(page).to have_link("Update #{team_liverpool.name}", href: "/teams/#{team_liverpool.id}/edit")
+      expect(page).to have_link("Update", href: "/teams/#{team_united.id}/edit")
+      expect(page).to have_link("Update", href: "/teams/#{team_chelsea.id}/edit")
+      expect(page).to have_link("Update", href: "/teams/#{team_liverpool.id}/edit")
+    end
+
+    it "deletes each team" do
+      visit "/teams"
+      expect(page).to have_link("Delete")
+      within "[data-id=#{team_liverpool.id}]" do
+        click_link "Delete"
+      end
+      expect(page).to have_no_content("Liverpool")
+      expect(current_path).to eq("/teams")
     end
   end
 end

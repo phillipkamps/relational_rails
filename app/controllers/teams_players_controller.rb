@@ -1,7 +1,13 @@
 class TeamsPlayersController < ApplicationController
   def index
     @team = Team.find(params[:id])
-    @players = @team.players.order(:name)
+    @players = if params[:alpha] == "yes"
+      @team.players.order(:name)
+    elsif !params[:older_than].nil?
+      @team.players.older_than(params[:older_than])
+    else
+      @team.players
+    end
   end
 
   def new

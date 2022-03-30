@@ -37,5 +37,10 @@ RSpec.describe "Players Show", type: :feature do
       visit "/players/#{@player_fernandes.id}"
       expect(page).to have_link("Update")
     end
+
+    it "has link to delete player" do
+      visit "/players/#{@player_fernandes.id}"
+      expect(page).to have_button("Delete")
+    end
   end
 end

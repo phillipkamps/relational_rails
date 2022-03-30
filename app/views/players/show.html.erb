@@ -9,3 +9,4 @@
 <p>Injured: <%= @player.injured %></p>
 <p>Created at: <%= @player.created_at %></p>
 <p>Updated at: <%= @player.updated_at %></p>
+<%= button_to 'Delete', "/players/#{@player.id}", method: :delete %>

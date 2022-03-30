@@ -4,8 +4,13 @@
 <h1 style="margin-bottom: 0px;"><%= @team.name %> Players</h1>
 <a href = "/teams/<%= @team.id %>/players/new">Create Player</a>
 <br>
-<br>
+<%= link_to "List players alphabetically", "/teams/#{@team.id}/players?alpha=yes", method: :get %>
+<%= form_with url: "/teams/#{@team.id}/players", method: :get, local: true do |form| %>
+  <p>Only return players older than <%= form.text_field :older_than, :size=>"1" %>
+  <%= form.submit "Submit" %>
+  <% end %></p>
 <% @players.each do |player| %>
+<div data-id="<%= player.id %>">
   <h2 style="display:inline"><%= player.name %></h2>
   <a href="/players/<%= player.id %>/edit"> Update</a>
   <p>Team ID: <%= player.team_id %></p>
@@ -13,4 +18,6 @@
   <p>Injured: <%= player.injured %></p>
   <p>Created at: <%= player.created_at %></p>
   <p>Updated at: <%= player.updated_at %></p>
+  <%= link_to 'Delete', "/players/#{player.id}", method: :delete %>
+</div>
 <% end %>
