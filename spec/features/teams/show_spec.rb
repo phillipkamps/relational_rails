@@ -53,5 +53,10 @@ RSpec.describe "Teams Show", type: :feature do
       visit "/teams/#{@team_united.id}"
       expect(page).to have_link("Update #{@team_united.name}")
     end
+
+    it "has link to delete team" do
+      visit "/teams/#{@team_united.id}"
+      expect(page).to have_button("Delete")
+    end
   end
 end

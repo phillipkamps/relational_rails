@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post "/teams/:id/players", to: "teams_players#create"
   patch "/teams/:id", to: "teams#update"
   get "/teams/:id", to: "teams#show"
+  delete "/teams/:id", to: "teams#destroy"
 
   get "/players", to: "players#index"
   get "/players/:id/edit", to: "players#edit"
